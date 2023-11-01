@@ -111,4 +111,15 @@ const high5 = function () {
   console.log("WAVE");
 };
 
-["jonas", "Mark", "Adam"].forEach(high5);
+// ["jonas", "Mark", "Adam"].forEach(high5);
+
+// document.body.addEventListener("click", high5);
+
+// FUNCTION THAT RETURN OTHER FUNCTIONS.
+
+const greet = (greeting) => (name) => console.log(`${greeting} ${name}`);
+
+greet("Wagwan")("Synthia");
+// this is usefull for functional paradigm
+
+// CHALLENGE

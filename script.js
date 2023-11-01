@@ -122,4 +122,26 @@ const greet = (greeting) => (name) => console.log(`${greeting} ${name}`);
 greet("Wagwan")("Synthia");
 // this is usefull for functional paradigm
 
-// CHALLENGE
+// CALL AND APPLY METHODS
+
+const lufthansa = {
+  airline: "Lufthansa",
+  iataCode: "LH",
+  bookings: [],
+  book(flightNumber, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.iataCode} ${flightNumber}`
+    );
+    this.bookings.push({ flight: `${this.iotaCode} ${flightNumber}`, name });
+  },
+};
+
+lufthansa.book(239, "Mark Paul");
+
+const euroWings = {
+  airline: "Eurowings",
+  iataCode: "EW",
+  booking: [],
+};
+
+const book = lufthansa.book;

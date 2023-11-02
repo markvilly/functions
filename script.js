@@ -132,7 +132,7 @@ const lufthansa = {
     console.log(
       `${name} booked a seat on ${this.airline} flight ${this.iataCode} ${flightNumber}`
     );
-    this.bookings.push({ flight: `${this.iotaCode} ${flightNumber}`, name });
+    this.bookings.push({ flight: `${this.iataCode} ${flightNumber}`, name });
   },
 };
 
@@ -142,10 +142,14 @@ lufthansa.book(635, "Shug Smith");
 const euroWings = {
   airline: "Eurowings",
   iataCode: "EW",
-  booking: [],
+  bookings: [],
 };
 
 // some frist class functions happening here bro
 const book = lufthansa.book;
 
-book(23, "Sarah Williams");
+book.call(euroWings, 23, "Sarah Williams");
+console.log(euroWings);
+
+book.call(lufthansa, 234, "Justus Nyabange");
+console.log(lufthansa);

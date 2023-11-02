@@ -137,6 +137,7 @@ const lufthansa = {
 };
 
 lufthansa.book(239, "Mark Paul");
+lufthansa.book(635, "Shug Smith");
 
 const euroWings = {
   airline: "Eurowings",
@@ -144,4 +145,7 @@ const euroWings = {
   booking: [],
 };
 
+// some frist class functions happening here bro
 const book = lufthansa.book;
+
+book(23, "Sarah Williams");

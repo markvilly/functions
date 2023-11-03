@@ -283,6 +283,18 @@ console.log(addTax(0.1, 200));
 
 //VAT we use all the time in Portugal - 23%
 
-const addVAT = addTax.bind(null, 0.23);
+// const addVAT = addTax.bind(null, 0.23);
 
-addVAT;
+// // addVAT = value=> value * 0.23
+
+// console.log(addVAT(200));
+// console.log(addVAT(100));
+
+const addVAT = (rate) => (value) => console.log(value + value * rate);
+
+const getVAT = addVAT(0.23);
+
+// addVAT;
+
+getVAT(100);
+getVAT(23);

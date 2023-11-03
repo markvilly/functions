@@ -237,8 +237,52 @@ console.log(ans);
 // Exercise 4: Age Calculator
 // Create a function called calculateAge that returns a function. The returned function should take a birth year as an argument and return the age. Use the call method to pass the current year as this. For example, if you call calculateAge(1990)(new Date().getFullYear()), it should return the age.
 
+const calculateAge = function (year) {
+  return;
+};
+
 // Exercise 5: Function Composition
 // Create a function called compose that takes two functions as arguments and returns a new function. The new function should execute the second function with the result of the first function. For example, calling compose(square, double)(3) should return 36 because it first doubles 3 to get 6 and then squares 6 to get 36.
 
-// Exercise 1: Function Returning Function
-// Create a function called greetMaker that takes a name as an argument and returns a function. The returned function should take another name as an argument and return a greeting string. For example, if you call greetMaker("Hello")("Alice"), it should return "Hello, Alice!"
+console.log("---------BIND METHOD------");
+
+//BIND METHOD. allows to manually set the this keyword to whatever method its bound.
+
+const bookEW = book.bind(euroWings);
+const bookLH = book.bind(lufthansa);
+const bookLX = book.bind(swiss);
+
+bookEW(23, "Steven Williams");
+const bookEW23 = book.bind(euroWings, 23);
+bookEW23("Jonas Schmidtmann");
+bookEW23("Martin Cooper");
+bookEW23("Joe Don");
+
+// Partial application - a part of the argument of the original functions already set.
+
+lufthansa.planes = 300;
+lufthansa.buyPlane = function () {
+  console.log(this);
+  this.planes++;
+  console.log(this.planes);
+};
+
+// BUY PLANE FUNCTION.
+
+document
+  .querySelector(".buy")
+  .addEventListener("click", lufthansa.buyPlane.bind(lufthansa));
+
+lufthansa.buyPlane();
+
+// Partial application.
+
+const addTax = (rate, value) => value + value * rate;
+
+console.log(addTax(0.1, 200));
+
+//VAT we use all the time in Portugal - 23%
+
+const addVAT = addTax.bind(null, 0.23);
+
+addVAT;

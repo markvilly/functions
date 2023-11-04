@@ -381,3 +381,31 @@ const runOnce = function () {
 
 // console.log(isSexy);
 console.log(age);
+
+//CLOSURES
+
+const secureBooking = function () {
+  let passengerCount = 0;
+
+  return function () {
+    passengerCount++;
+    console.log(`${passengerCount}`);
+  };
+};
+
+// Testing how arrow functions don't get argument object or the "this" keyword.
+
+console.log("-----Global Execution Context refresher ------");
+
+function regularFunction() {
+  console.log(arguments);
+  console.log(this);
+}
+
+const arrowFunction = () => {
+  console.log(arguments);
+  console.log(this);
+};
+
+regularFunction(1, 2, 3, 4);
+arrowFunction(1, 2, 3, 4);

@@ -498,3 +498,23 @@ function counter() {
 }
 
 let sheepCounter = counter();
+
+// FUNCTION THAT RETRIVES NAMES.
+
+const createPerson = function (name) {
+  let privateName = name;
+  return {
+    getName: function () {
+      return privateName;
+    },
+    setName: function (newName) {
+      privateName = newName;
+      return privateName;
+    },
+  };
+};
+
+const nameCreator = createPerson("Alice");
+console.log(nameCreator.getName());
+console.log(nameCreator.setName("Bob"));
+console.log(nameCreator.setName("Smiggy"));
